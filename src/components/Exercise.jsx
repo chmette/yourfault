@@ -6,12 +6,12 @@ import React from 'react';
 
 const Exercise = (props) => {
 
-  const {name, img, repeats, addExerciseHandler} = props
+  const {name, img, repeats, addExerciseHandler,subtractExercise, addExercise,} = props
 
 
-  const localAddExerciseHandler = (e) => {
-  addExerciseHandler({name, img, repeats})
-  }
+  // const localAddExerciseHandler = (e) => {
+  // addExerciseHandler({name, img, repeats})
+  // }
 
 
  
@@ -20,14 +20,24 @@ const Exercise = (props) => {
 
   return(
     
-    <div className="exercise-display"
-        // style={{ display: checkboxes.legs ? "block" : "none" }}
-        >
+    <div className="individual-exercise-container">
+       
           <h3>{name}</h3>
           <img src={img} alt='exercise'/>
-          <p>{repeats}</p>
+          <div className="buttons">
+                    <button name={name} onClick={(e)=>subtractExercise(e)}>
+                        - 
+                    </button>
+                    
+                    <button name={name} onClick={(e)=>addExercise(e)}>
+                        +
+                    </button>
+                </div>
           
-          <button onClick={localAddExerciseHandler}>Add to Workout</button>
+          
+          {/* <p>{repeats}</p>
+          
+          <button onClick={localAddExerciseHandler}>Add to Workout</button> */}
     </div>   
 
     

@@ -1,15 +1,18 @@
 import React from 'react';
 import fitnessData from "../fitnessData.js";
 import Exercise from './Exercise';
+import ExerciseModal from "./ExerciseModal";
 
 
 const ExerciseContainer = (props) => {
  
- 
- const {checkboxes} = props
+ // Destructure props
+ const {checkboxes, subtractExercise, addExercise, exercises} = props
+
 
 
  // Create workout list 
+ // creates a Array of Objects with Data to Use and show in the Modal
 
  let workout = [];
 
@@ -20,7 +23,7 @@ const ExerciseContainer = (props) => {
  }
 
 
-// get ExerciseList
+// get ExerciseList with category selection 
 
   const activeExercises = fitnessData.filter((item)=> 
       (checkboxes.Legs && item.category.Legs) ||
@@ -38,18 +41,30 @@ const ExerciseContainer = (props) => {
     repeats={item.repeats} 
     category={item.category} 
     addExerciseHandler={addExerciseHandler}
+    subtractExercise={subtractExercise}
+          addExercise={addExercise}
+            exercises={exercises}
   />)
 
  
  
-  //==============================
+//==============================
+ // Return Statement 
  //==============================
 
   return (
-    <section>
-      <h3>Found {exerciseList.length} Exercises</h3>
-      {exerciseList}
+    <section className="exercises-main">
+      <section className="exercise-list">
+        <h3>Found {exerciseList.length} Exercises</h3>
+        <div className="individual-exercise">
+                    {exerciseList}
+                </div>
+      </section>
+      <section className="exercise-modal">
+                <ExerciseModal exercises={exercises}/>
+      </section>
     </section>
+
   );
 };
 

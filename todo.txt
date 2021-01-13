@@ -1,0 +1,6 @@
+1.Style
+2.Header and footer
+2.Make the container only visible when we have exercises
+3.Show recommended repeats
+4.Clean up code
+5.Send Modal via email

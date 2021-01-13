@@ -1,7 +1,72 @@
-.exercise-display {
-  background-color: brown;
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #1d1d1d;
+  color: aliceblue;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+main {
+  width: 100%;
+}
+
+/* HEADER */
+header {
+  border-bottom: 2px solid #4484d2;
+  padding: 15px;
+}
+
+.exercises-main {
+  display: flex;
+}
+
+.exercise-list {
+  width: 70%;
+  padding: 10px;
+}
+
+.exercise-modal {
+  width: 30%;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: 1px solid black;
+  font-size: 15px;
+  padding: 5px;
+  height: 35px;
+}
+
+.individual-exercise {
+  margin: 30px;
+  font-size: 20px;
+}
+
+aside {
+  width: 100%;
+  height: 200px;
 }
 
 img {
-  width: 30%;
+  width: 50%;
+  height: 70%;
+}
+
+.individual-exercise-container {
+  width: 50%;
+  margin: 0 auto;
+  margin: 30px;
+  background-color: white;
 }

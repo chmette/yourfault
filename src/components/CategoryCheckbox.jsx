@@ -5,12 +5,12 @@ import React from 'react';
 const CategoryCheckbox = ({checkboxHandler, checkboxes})=>{
 
 //==============================
+ // Return Statement 
  //==============================
 
 
 return(
-    <section className='multiple-checkboxes'>
-   
+    <div className='multiple-checkboxes'>
         <label>Legs</label>
         <input
             type='checkbox'
@@ -42,7 +42,7 @@ return(
             checked={checkboxes.ArmAndShoulder}
             onChange={checkboxHandler}
         />
-    </section>
+    </div>
 )}
 
 export default CategoryCheckbox
