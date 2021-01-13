@@ -6,26 +6,23 @@ import Footer from './Footer';
 import '../App.css';
 
 
-
-
-
 const App = () => {
 
 // Exercises to sum
   const[exercises, setExercises] = useState({
-    Plank :0,
-    Crunches :0,
-    "Russian Twist ":0,
-    "Mountain Climbers ":0,
-    "Reverse Crunches ":0,
-    "Bicycle Crunches ": 0,
-    "Side Plank ":0,
-    "Heel touch ": 0,
-    'Burpees':0,
+     "Plank": 0,
+    "Crunches" :0,
+    "Russian Twist":0,
+    "Mountain Climbers":0,
+    "Reverse Crunches":0,
+    "Bicycle Crunches": 0,
+    "Side Plank":0,
+    "Heel touch": 0,
+    "Burpees":0,
     "Inch Worms": 0,
     "Superman": 0,
     "Squats":0,
-    "Push Ups":0,
+    "Push Ups (on knees possible)":0,
     "Leg Raises": 0,
     "Lunges":0,
     "Side Lunges":0,
@@ -33,24 +30,27 @@ const App = () => {
     "Glute Bridges": 0,
     "Bridge Leg Raise": 0,
     "Donkey Kicks": 0,
-    "Step-up":0,
+    "Step up":0,
     "Wall Sit": 0,
     "Diamond Leg Lifts": 0,
     "Hydrant Leg Lifts": 0,
     "Arm Circle":0,
     "Triceps Dip": 0,
-    "Lateral Arm Raise": 0,
+    "Lateral Arm Raise (with weights)": 0,
     "Plank Jack": 0,
   })
 
-  //Increment selected exercise by 15
+  //Increment selected exercise by 5
   const addExercise = (e)=>{
-    setExercises({...exercises, [e.target.name]: exercises[e.target.name] +15})
+      setExercises({...exercises, [e.target.name]: exercises[e.target.name] +5})
   }
 
-  //Decrement selected exercise by 15
+  //Decrement selected exercise by 5
   const subtractExercise = (e)=>{
-    setExercises({...exercises, [e.target.name]: exercises[e.target.name]-15})
+    //only subtract if we have more than 0
+    if(exercises[e.target.name]>0){
+      setExercises({...exercises, [e.target.name]: exercises[e.target.name]-5})
+    }
   }
 
 

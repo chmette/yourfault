@@ -1,9 +1,5 @@
 import React from 'react';
 
-
-
-
-
 const Exercise = (props) => {
 
   // Destructure props
@@ -17,11 +13,6 @@ const Exercise = (props) => {
   // }
 
 
-   
-  
-  
-
- 
  //==============================
 // Return Statement 
 //==============================

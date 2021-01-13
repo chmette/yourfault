@@ -13,38 +13,43 @@ return(
     <div className='multiple-checkboxes'>
 
         <h3>Focus Group:</h3>
-        <label>Legs</label>
-        <input
-            type='checkbox'
-            name='Legs'
-            checked={checkboxes.Legs}
-            onChange={checkboxHandler}
-        />
+        <div className="individual-checkboxes">
+            <label>Legs</label>
+            <input
+                type='checkbox'
+                name='Legs'
+                checked={checkboxes.Legs}
+                onChange={checkboxHandler}
+            />
 
-        <label>Booty</label>
-        <input
-            type='checkbox'
-            name='Booty'
-            checked={checkboxes.Booty}
-            onChange={checkboxHandler}
-        />
+            <label>Booty</label>
 
-        <label>Abs and Back</label>
-        <input
-            type='checkbox'
-            name='AbsAndBack'
-            checked={checkboxes.AbsAndBack}
-            onChange={checkboxHandler}
-        />
-        <label>Arms and Shoulder</label>
+            <input
+                type='checkbox'
+                name='Booty'
+                checked={checkboxes.Booty}
+                onChange={checkboxHandler}
+            />
 
-        <input
-            type='checkbox'
-            name='ArmAndShoulder'
-            checked={checkboxes.ArmAndShoulder}
-            onChange={checkboxHandler}
-        />
+            <label>Abs and Back</label>
+
+            <input
+                type='checkbox'
+                name='AbsAndBack'
+                checked={checkboxes.AbsAndBack}
+                onChange={checkboxHandler}
+            /> 
+
+            <label>Arms and Shoulder</label>
+
+            <input
+                type='checkbox'
+                name='ArmAndShoulder'
+                checked={checkboxes.ArmAndShoulder}
+                onChange={checkboxHandler}
+            />
+        </div>
     </div>
 )}
 
-export default CategoryCheckbox
+export default CategoryCheckbox;

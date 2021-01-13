@@ -9,8 +9,6 @@ const ExerciseContainer = (props) => {
  // Destructure props
  const {checkboxes, subtractExercise, addExercise, exercises} = props
 
-
-
  // Create workout list 
  // creates a Array of Objects with Data to Use and show in the Modal
 
@@ -24,7 +22,6 @@ const ExerciseContainer = (props) => {
 
 
 // get ExerciseList with category selection 
-
   const activeExercises = fitnessData.filter((item)=> 
       (checkboxes.Legs && item.category.Legs) ||
       (checkboxes.Booty && item.category.Booty) ||
@@ -42,8 +39,8 @@ const ExerciseContainer = (props) => {
     category={item.category} 
     addExerciseHandler={addExerciseHandler}
     subtractExercise={subtractExercise}
-          addExercise={addExercise}
-            exercises={exercises}
+    addExercise={addExercise}
+    exercises={exercises}
   />)
 
  
@@ -55,22 +52,20 @@ const ExerciseContainer = (props) => {
   return (
     <>
     <div className="found-amount">
-      <p>Found {exerciseList.length} Exercises</p>  
+      <p style={{display: exerciseList.length===0 && "none"}}>Found {exerciseList.length} Exercises</p>  
+      <p style={{display: exerciseList.length>0 && "none"}} className="select-one">Select at least one focus group</p>  
     </div>
 
     <section className="exercises-main">
-      
-      <section className="exercise-list">
-      <div className="intensity">
-        <p>Add the intensity via Click on the '+' Button.</p>
-        </div>
-        <div className="individual-exercise-container">
-          {exerciseList}
-        </div>
-      </section>
-      <section className="exercise-modal">
-        <ExerciseModal exercises={exercises}/>
-      </section>
+      <div className="exercise-list">
+        <div className="intensity">
+          <p>Add the intensity via Click on the '+' Button.</p>
+          </div>
+          <div className="individual-exercise-container">
+            {exerciseList}
+          </div>
+      </div>
+      <ExerciseModal exercises={exercises}/>
     </section>
     </>
   );

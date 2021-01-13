@@ -1,8 +1,5 @@
 import React from "react";
 
-
-
-
 const ExerciseModal = ({exercises})=>{
     
     //convert object into array 
@@ -13,43 +10,59 @@ const ExerciseModal = ({exercises})=>{
 
     //if there are exercises display the particular exercise
     const exerciseList = 
-    exercisesArray.map((order,index)=>
-        order[1]>0&&(
+    exercisesArray.map((exercise,index)=>
+        exercise[1]>0&&(
             <li className="exercises-li" key={index}>
-                {order[0]} 
                 <span className="span">
-                     {order[1]}
+                     {exercise[1]}
                 </span>
+                {exercise[0]} 
             </li>
         )
     );
 
-    //If there are no exercises we show this
-    exercisesCheck === 0 &&
-        exerciseList.push(
-            <li className="exercises-li" key={0}>
-                You have no exercises yet!
-            </li>
-        );
-        
+    //Count how many exercises we added
+    const amountOfExercises = exercisesArray.reduce((acc, exercise)=>{
+        if(exercise[1]>0){
+            acc++
+        }
+        return acc
+    },0)
+
+
 //==============================
 // Return Statement 
 //==============================
 
 
     return (
-       <div>
-           <h3>There you go - your workout is ready</h3>
-           <h5>Do it for 3 Rounds : </h5>
-            <ul className="exercises-ul">
-                {exerciseList}
-            </ul>
-            <p>Share your workout <i class="fas fa-share-alt-square"></i></p>
+       <div className="exercise-modal-container" style={{display: exercisesCheck === 0 && 'none' }}  >
+         <div className="exercise-modal-container-info">
+                {/* show if we have more than 5 ex */}
+               <h3 style={{display: amountOfExercises<5 && "none" }} >There you go - your workout is ready</h3>
+
+                {/* Show if we have less then 5 ex */}
+                <h3 style={{display: amountOfExercises>=5 && "none" }}>Choose at least 5 exercises</h3>
+
+               <h4>Do it for 3 Rounds </h4>
+                <ul className="exercises-ul">
+                    {exerciseList}
+                </ul>
+                {/* show if we have more than 5 ex */}
+                <p style={{display: amountOfExercises<5 && "none" }}>Share your workout <i className="fas fa-share-alt-square"></i></p>
+         </div>
+         
        </div>
-        
         )
-        
 };
+
+
+
+
+
+
+
+
 
 
 

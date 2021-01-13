@@ -215,7 +215,7 @@ const fitnessData = [
     },
     repeats: ["15 each side", "25 each side ", "40 each side"],
     img:
-      "https://cdn.prod.openfit.com/uploads/2017/10/20123316/Open_Fit_attitude_all-770.gif",
+      "https://www.fitundattraktiv.de/wp-content/uploads/2018/12/bauch_beine_po_uebugen_pdf-beinheben_rueckwaerts.gif",
   },
   {
     id: 18,
@@ -325,7 +325,7 @@ const fitnessData = [
   },
   {
     id: 26,
-    name: "Trizeps Dip",
+    name: "Triceps Dip",
     category: {
       Legs: false,
       Booty: false,
