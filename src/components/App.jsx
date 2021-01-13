@@ -76,7 +76,10 @@ const checkboxHandler = (e) => {
   return (
     <main>
       <Header />
-       < CategoryCheckbox checkboxHandler={checkboxHandler} checkboxes={checkboxes}/>
+       < CategoryCheckbox 
+       checkboxHandler={checkboxHandler} 
+       checkboxes={checkboxes} 
+       />
        < ExerciseContainer 
           checkboxes={checkboxes} 
           subtractExercise={subtractExercise}

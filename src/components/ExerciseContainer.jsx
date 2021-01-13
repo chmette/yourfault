@@ -47,24 +47,32 @@ const ExerciseContainer = (props) => {
   />)
 
  
- 
+   
 //==============================
- // Return Statement 
- //==============================
+// Return Statement 
+//==============================
 
   return (
+    <>
+    <div className="found-amount">
+      <p>Found {exerciseList.length} Exercises</p>  
+    </div>
+
     <section className="exercises-main">
+      
       <section className="exercise-list">
-        <h3>Found {exerciseList.length} Exercises</h3>
-        <div className="individual-exercise">
-                    {exerciseList}
-                </div>
+      <div className="intensity">
+        <p>Add the intensity via Click on the '+' Button.</p>
+        </div>
+        <div className="individual-exercise-container">
+          {exerciseList}
+        </div>
       </section>
       <section className="exercise-modal">
-                <ExerciseModal exercises={exercises}/>
+        <ExerciseModal exercises={exercises}/>
       </section>
     </section>
-
+    </>
   );
 };
 

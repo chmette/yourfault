@@ -1,20 +1,17 @@
 import React from "react";
 
 
-//this modal will only be shown if the header is clicked
 
-//Here we determine wether the modal should be shown or not.
-
-//Our exercises are inside an object and we need to convert this object into array with the Object.entries command. This gives an array of two elements the key and the value
 
 const ExerciseModal = ({exercises})=>{
+    
+    //convert object into array 
     const exercisesArray = Object.entries(exercises)
 
     //Check if we have exercises
     const exercisesCheck = exercisesArray.reduce((acc,num)=>acc+=num[1],0);
 
     //if there are exercises display the particular exercise
-
     const exerciseList = 
     exercisesArray.map((order,index)=>
         order[1]>0&&(
@@ -35,12 +32,48 @@ const ExerciseModal = ({exercises})=>{
             </li>
         );
         
-    //-------------------------------
-    //-------------------------------
+//==============================
+// Return Statement 
+//==============================
 
-    return <ul className="exercises-ul">
-        {exerciseList}
-        </ul>;
+
+    return (
+       <div>
+           <h3>There you go - your workout is ready</h3>
+           <h5>Do it for 3 Rounds : </h5>
+            <ul className="exercises-ul">
+                {exerciseList}
+            </ul>
+            <p>Share your workout <i class="fas fa-share-alt-square"></i></p>
+       </div>
+        
+        )
+        
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default ExerciseModal;

@@ -5,12 +5,14 @@ import React from 'react';
 const CategoryCheckbox = ({checkboxHandler, checkboxes})=>{
 
 //==============================
- // Return Statement 
- //==============================
+// Return Statement 
+//==============================
 
 
 return(
     <div className='multiple-checkboxes'>
+
+        <h3>Focus Group:</h3>
         <label>Legs</label>
         <input
             type='checkbox'
