@@ -16,9 +16,8 @@ const ExerciseContainer = (props) => {
 
  const addExerciseHandler = (exercise) => {
   workout.push(exercise)
-  console.log(workout);
   return workout 
- }
+ } 
 
 
 // get ExerciseList with category selection 

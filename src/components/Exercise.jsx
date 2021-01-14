@@ -6,11 +6,6 @@ const Exercise = (props) => {
   // props currently not used { addExerciseHandler}
   const {name, img, subtractExercise,repeats, addExercise,} = props
 
-   
-  //Handler Exercises with workout (object with data name img repeats)
-  // const localAddExerciseHandler = (e) => {
-  // addExerciseHandler({name, img, repeats})
-  // }
 
 
  //==============================

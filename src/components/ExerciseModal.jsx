@@ -49,6 +49,7 @@ const ExerciseModal = ({exercises})=>{
                     {exerciseList}
                 </ul>
                 {/* show if we have more than 5 ex */}
+                <p style={{display: amountOfExercises<5 && "none" }}>Don't forget - its your fault!</p>
                 <p style={{display: amountOfExercises<5 && "none" }}>Share your workout <i className="fas fa-share-alt-square"></i></p>
          </div>
          
