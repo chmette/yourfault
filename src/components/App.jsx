@@ -1,15 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useReducer} from 'react';
 import Header from  './Header';
 import CategoryCheckbox from './CategoryCheckbox';
 import ExerciseContainer from './ExerciseContainer';
+import {exerciseReducer} from '../reducer/exerciseReducer'
 import Footer from './Footer';
 import '../App.css';
+
+
+
+
 
 
 const App = () => {
 
 // Exercises to sum
-  const[exercises, setExercises] = useState({
+  const [exercises, dispatchExercises] = useReducer(exerciseReducer, {
      "Plank": 0,
     "Crunches" :0,
     "Russian Twist":0,
@@ -40,16 +45,18 @@ const App = () => {
     "Plank Jack": 0,
   })
 
-  //Increment selected exercise by 5
-  const addExercise = (e)=>{
-      setExercises({...exercises, [e.target.name]: exercises[e.target.name] +5})
+   
+
+  // decrement 
+   const addExercise = (e)=>{
+     dispatchExercises({type:'ADD', payload:e.target.name})
   }
 
   //Decrement selected exercise by 5
   const subtractExercise = (e)=>{
     //only subtract if we have more than 0
     if(exercises[e.target.name]>0){
-      setExercises({...exercises, [e.target.name]: exercises[e.target.name]-5})
+      dispatchExercises({type:'SUBSTRACT', payload:e.target.name})
     }
   }
 
